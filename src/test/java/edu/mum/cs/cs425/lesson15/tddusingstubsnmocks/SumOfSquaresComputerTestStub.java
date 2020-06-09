@@ -13,22 +13,22 @@ import org.junit.Test;
 import edu.mum.cs.cs425.lesson15.tddusingstubsnmocks.SumOfSquaresComputer;
 import edu.mum.cs.cs425.lesson15.tddusingstubsnmocks.service.ISquaresComputingService;
 
-public class SumOfSquaresComputerTest {
-	
+public class SumOfSquaresComputerTestStub {
+
 	private SumOfSquaresComputer ssc;
 	// This is a stubbed service object (i.e. fake/dummy/hardcoded service object)
 	private ISquaresComputingService sqCompService = new ISquaresComputingService() {
-		
-	
+
 		public int[] computesSquares(int[] ints) {
-			
+
 //			return new int[] {0};
-			return new int[] {1,4,9};
+			return new int[] { 1, 4, 9 };
 		}
-	}; 
-	
+	};
+
 	// This is a mocked service object; using the Mockito framework
-	private ISquaresComputingService sqCompService2 = mock(ISquaresComputingService.class);
+	// private ISquaresComputingService sqCompService2 =
+	// mock(ISquaresComputingService.class);
 
 	@Before
 	public void setUp() throws Exception {
@@ -43,10 +43,11 @@ public class SumOfSquaresComputerTest {
 	@Test
 	public final void testComputeSumOfSquares() {
 //		int sumOfSquares = ssc.computeSumOfSquares(new int[] {1,2,3});
-		when(sqCompService2.computesSquares(new int[] {1,2,3})).thenReturn(new int[] {1,4,9});
-		int sumOfSquares = ssc.computeSumOfSquares(new int[] {1,2,3});
-		assertThat(sumOfSquares, is(14));
-//		assertEquals(14, sumOfSquares);
-	//	verify(sqCompService2).computesSquares(new int[] {1,2,3});
+		// when(sqCompService.computesSquares(new int[] { 1, 2, 3 })).thenReturn(new
+		// int[] { 1, 4, 9 });
+		int sumOfSquares = ssc.computeSumOfSquares(new int[] { 1, 2, 3 });
+		// assertThat(sumOfSquares, is(14));
+		assertEquals(14, sumOfSquares);
+		// verify(sqCompService).computesSquares(new int[] {1,2,3});
 	}
 }
