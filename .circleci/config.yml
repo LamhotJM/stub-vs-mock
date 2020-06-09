@@ -1,0 +1,9 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:11.0-stretch-node-browsers-legacy
+    steps:
+      - run : mvn test
+      - store_artifacts:
+          path:  target
