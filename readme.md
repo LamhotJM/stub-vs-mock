@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/LamhotJM/stub-vs-mock.svg?style=svg)](https://app.circleci.com/pipelines/github/LamhotJM/stub-vs-mock)
 
 # Stub VS Mock
 ## Stub Object
